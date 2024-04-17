@@ -1,0 +1,507 @@
+
+/* Reset browser defaults */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    /*border: 1px solid #333333; */
+}
+
+.color-sample {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    margin-right: 0px;
+    border: 1px solid #ffffff;
+}
+
+/* scroll bar */
+/* width */
+::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #555;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    border: 1px solid #ffc700
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+
+body {
+    background-color: #111111;
+    color: #ffc700;
+    font-family: 'Heebo', sans-serif;
+    font-size: 1em;
+    margin: 1em;
+}
+
+nav {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 20px;
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid #ffc700;
+    border-radius: 10px;
+    background-color: rgba(0, 0 ,0, 0.1);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    height: 52px;
+    align-items: center;
+    width: 100%;
+    z-index: 1;
+}
+
+#logo-and-name {
+    display: flex;
+    align-items: center;
+}
+
+label, #logo img {
+    width: auto;
+    height: 25px;
+    padding: 0em 0em 0em 0.5em;
+}
+
+.menu ul{
+    display: flex;
+    list-style: none;
+    padding-right: 0.5em;
+    box-sizing: border-box;
+}
+
+.menu ul li{
+    font-size: 0.8em;
+    padding: 5px;
+    border: 1px solid transparent;
+    border-radius: 3px;
+    transition: border 500ms ease-in;
+    cursor: pointer;
+}
+
+.menu ul li:hover {
+    border: 1px solid #ffc700;
+    transition: border 100ms ease-in;
+}
+
+/* Mobile Menue Setup */
+
+.menu-line {
+    width: 20px;
+    height: 3px;
+    background-color: #ffc700;
+    margin-bottom: 3px;
+    border-radius: 2px;
+}
+
+
+.button {
+    border: 1px solid #ffc700;
+    border-radius: 8px;
+    padding: 10px;
+    background-color: transparent;
+    transition: background-color 0.25s ease-in-out;
+    font-family: 'Heebo', sans-serif;
+    color: #ffc700;
+}
+
+.button:hover {
+    background-color: #ffc700;
+    color: #000000;
+    transition: 0.25s ease-in-out;
+}
+
+.section-container{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10vh;
+    margin-bottom: 25vh;
+    z-index: -1;
+}
+
+
+.small-section {
+    border: 1px solid #ffc700;
+    border-radius: 12px;
+    text-align: center;
+    margin: 0px;
+    padding: 1em;
+}
+
+.services {
+    font-family: "Fira Code", monospace;
+    line-height: 4em;
+    margin: 1em;
+}
+
+.inline-para {
+    font-family: "Fira Code", monospace;
+    margin: 1.5em;
+    max-width: 45em;
+    line-height: 1.6em;
+    text-justify: newspaper;
+}
+
+.inline-main-para {
+    max-width: 48vw;
+    font-style: italic;
+    font-size: 2.2em;
+    padding: 2em 0 2em 0;
+}
+
+.services ul li {
+    list-style: none;
+}
+
+.headline {
+    display: flex;
+    margin: 2em;
+}
+
+.no-box{
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    border: 1px solid #ffc700;
+    border-radius: 12px;
+    font-size: 6em;
+    text-align: center;
+    margin: 0px;
+    padding: 0em 0.4em 0em 0.4em;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+a {
+    font-style: none;
+    text-decoration: none;
+    color: #ffc700;
+}
+
+span, label {
+    width: 25em;
+    padding: 0.5em;
+    font-family: "Fira Code", monospace;
+    font-size: 10pt;
+    line-height: 2.5em;
+    text-decoration: none;
+}
+
+
+#title {
+    margin-left: 1em;
+}
+
+#title h6{
+    font-size: 0.8em;
+}
+
+.video-play {
+    padding: 0.5em;
+    border: 1px solid #ffc700;
+    border-radius: 10px;
+    width: 75%;
+}
+.project-grid {
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+    align-items: center;
+    justify-content: center;
+}
+img {
+    width: 100%;
+    height: auto;
+}
+
+.project-box {
+    position: relative;
+    border: 1px solid #ffc700;
+    border-radius: 10px;
+    width: 36em;
+    height: 20em;
+    margin: 1em;
+    background-color: #000;
+    overflow: hidden;
+}
+
+.project-box img {
+    filter: grayscale(80%);
+    transition: 1.5s ease-out;
+}
+
+.project-box img:hover {
+    filter: grayscale(0%);
+    position: relative;
+    width: 115%;
+    transition: 0.5s ease-in-out;
+
+}
+.info-box {
+    background: rgba(0, 0 ,0, 0.4);
+    position: absolute;
+    bottom: 0;
+    right: -450px;
+    border: 1px solid #ffc700;
+    border-radius: 10px;
+    width: 75%;
+    margin: 1em;
+    padding: 0.5em;
+    text-align: right;
+    opacity: 0;
+    transition: 0.5s ease;
+}
+
+.project-box:hover .info-box {
+    right: 0px;
+    opacity: 100%;
+
+}
+
+.project-info-description {
+    font-weight: 100;
+    font-size: 10pt;
+}
+
+.contact-block .contact-block-heading, .contact-block-body {
+    border: 1px solid #ffc700;
+    border-radius: 6px;
+}
+
+.contact-block-heading {
+    padding: 2px;
+    width: 40%;
+}
+
+.contact-block {
+    margin: 4em;
+}
+
+#footer-block {
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+}
+
+.contact-block-body {
+    width: 25em;
+    padding: 0.75em;
+    font-family: "Fira Code", monospace;
+    font-size: 10pt;
+    line-height: 2.5em;
+    text-decoration: none;
+}
+
+.contact-block-body ul li {
+    list-style: none;
+}
+
+#mobile-menu {
+    display: none;
+}
+
+.blacktextbox {
+  background-color: #000;
+  border: 1px solid #ffc700;
+  border-radius: 5px;
+  padding: 8px 12px;
+  width: 100%;
+  max-width: 400px; /* Set a maximum width for responsiveness */
+  box-sizing: border-box; /* Include padding in width calculation */
+  color: #fff; /* Text color for readability */
+  font-family: "Fira Code", monospace; /* Choose a basic font */
+}
+
+/* About page */
+
+.what-we-do {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 3em;
+    justify-content: center;
+}
+
+.one-thing {
+    justify-items: center;
+    width: 22em;
+    min-width: 20em;
+    margin: 1em;
+}
+
+.one-thing-heading {
+    background: #ffc700;
+    color: #000;
+    margin: 1.5em;
+    padding: 1em;
+    border: 1px solid #ffc700;
+    border-radius: 0.5em;
+}
+
+.constrained-para {
+    font-family: "Fira Code", monospace;
+    line-height: 1.4em;
+    text-align: left;
+    margin-top: 1em;
+}
+
+.whole-team {
+    padding-top: 3em;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 2em;
+    justify-content: center;
+}
+
+.team-member-container {
+    display: block;
+    padding: 1.5em;
+    margin: 2em;
+    max-width: 24em;
+    height: fit-content;
+    border: 0px dashed #ffc700;
+    border-radius: 1em;
+}
+
+.team-member-image {
+    border: 1px solid #ffc700;
+    border-radius: 0.6em;
+    overflow: hidden;
+    margin-bottom: 1em;
+    height: 20em;
+    
+}
+
+.team-member img {
+    width: 105%;
+}
+
+.team-member-info-container {
+   padding-bottom: 0em;
+}
+
+.team-member-info {
+    padding: 0.5em;
+    background: rgba(0, 0 ,0, 0.65);
+    border: 1px solid #ffc700;
+    border-radius: 0.35em;
+    text-align: left;
+}
+
+
+.webgl
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    outline: none;
+    mix-blend-mode: screen;
+    z-index: -1;
+}
+
+
+/* media quiery for mobile */
+@media all and (max-width: 680px) {
+    nav {
+        display: block;
+    }
+
+    .section-container {
+        margin-top: 3vh;
+        margin-bottom: 25vh;
+    }
+
+    #logo-and-name {
+        padding-top: 13px;
+    }
+
+    #title h6{
+        font-size: 0.7em;
+    }
+    
+    .menu {
+       opacity: 0%;
+       transition: 0.5s ease;
+    }
+
+    .menu ul {
+        flex-direction: column;
+        position:relative;
+        top: 40px;
+        text-align: center;
+        border: 1px solid #ffc700;
+        border-radius: 10px;
+        background-color: rgba(0, 0 ,0, 0.85);
+        height: auto;
+        line-height: 4em;
+        padding:3em;
+    }
+
+    .menu ul li {
+        border-radius: 10px;
+    }
+
+    #mobile-menu {
+        display: block;
+        position: absolute;
+        right: 15px;
+        top: 18px;
+    }
+
+    h1 {
+        font-size: 10vh;
+    }
+
+    .services {
+        line-height: 3em;
+    }
+
+    .content-block, .contact-block {
+        margin: 1em;
+    }
+
+    .video-play {
+        width: 90%;
+    }
+
+    .info-box {
+        right: 0px;
+        opacity: 100%;
+
+    }
+
+    footer .section-container {
+        margin-bottom: 1px;
+        padding-bottom: 0px;
+    }
+
+    .team-member-container {
+        flex-direction: column;
+    }
+
+    .active {
+        display: block;
+        opacity: 100%;
+        transition: 0.5s ease;
+    }
+
+}

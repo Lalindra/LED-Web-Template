@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LED Wall Caliberation Template Generator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+    <div class="section-container">
+
+        <h1>LED Wall Caliberation <br> Template Generator</h1>
+
+        <br><br>
+        <form action="/" method="post">
+            <label for="cube_width">LED Cube Width (pixels):</label>
+            <input type="number" id="cube_width" class="blacktextbox" name="cube_width" required value="128"><br><br>
+            <label for="cube_height">LED Cube Height (pixels):</label>
+            <input type="number" id="cube_height" class="blacktextbox" name="cube_height" required value="128"><br><br>
+            <label for="num_horizontal">Number of Horizontal Cubes:</label>
+            <input type="number" id="num_horizontal" class="blacktextbox" name="num_horizontal" required value="10"><br><br>
+            <label for="num_vertical">Number of Vertical Cubes:</label>
+            <input type="number" id="num_vertical" class="blacktextbox" name="num_vertical" required value="5"><br><br>
+            
+            <label for="palette">Select Color Palette:</label>
+
+            <select id="palette" class="blacktextbox" name="palette" onchange="updatePalettePreview()">
+            {% for palette in palettes %}
+            <option value="{{ palette }}" data-colors='{{ COLOR_PALETTES[palette] | tojson | safe }}'>{{ palette }}</option>
+            {% endfor %}
+            </select>
+            
+            <br><br>
+
+            <div id="palette-preview"></div><br>
+
+            <label for="overlays">Overlays</label>
+            <div class="small-section">
+
+                <input type="checkbox" class="custom-checkbox" id="draw_circle" name="draw_circle" checked>
+                <label for="draw_circle">Draw Circle</label><br>
+
+                <input type="checkbox" id="draw_lines" name="draw_lines" checked>
+                <label for="draw_lines">Draw Lines</label><br>
+                <input type="checkbox" id="draw_rgb_blocks" name="draw_rgb_blocks">
+                <label for="draw_rgb_blocks">Include RGB Color Blocks</label>
+
+            </div>
+
+            <br>
+            <br>
+
+            <button type="submit" class="button">Generate Template</button>
+
+        </form>
+
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+    <script>
+        var paletteSelect = document.getElementById("palette");
+        var previewDiv = document.getElementById("palette-preview");
+
+        function updatePalettePreview() {
+            var selectedPalette = paletteSelect.value;
+            var palettes = JSON.parse('{{ COLOR_PALETTES | tojson | safe }}');
+            var colors = palettes[selectedPalette];
+            previewDiv.innerHTML = "";
+            colors.forEach(function(color) {
+                var colorSample = document.createElement("div");
+                colorSample.className = "color-sample";
+                colorSample.style.backgroundColor = color;
+                previewDiv.appendChild(colorSample);
+            });
+        }
+
+        updatePalettePreview();
+
+    </script>
+
+</body>
+
+</html>

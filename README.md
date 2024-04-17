@@ -1,2 +1,3 @@
 # LED-Web-Template
-LED Template Ge
+
+Generated LED Grid for configuring LED walls
